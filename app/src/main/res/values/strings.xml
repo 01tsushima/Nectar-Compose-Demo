@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Nectar-Demo</string>
+
+    <!-- bottom nav bar -->
+    <string name="shop">Shop</string>
+    <string name="explore">Explore</string>
+    <string name="cart">Cart</string>
+    <string name="favourite">Favourite</string>
+    <string name="account">Account</string>
+</resources>
