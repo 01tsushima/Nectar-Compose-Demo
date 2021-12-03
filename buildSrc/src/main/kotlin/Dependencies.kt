@@ -12,4 +12,5 @@ object Dependencies {
     const val  pagingComposeVersion = "1.0.0-alpha14"
     const val timberVersion = "4.7.1"
     const val gsonVersion = "2.8.7"
+    const val accompanistVersion = "0.16.1"
 }

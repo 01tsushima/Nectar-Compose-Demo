@@ -1,4 +1,4 @@
-package com.nectar_demo.acitivity.bottom.bar
+package com.nectar_demo.features.main
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

@@ -1,3 +1,4 @@
+import Dependencies.accompanistVersion
 import Dependencies.activityComposeVersion
 import Dependencies.composeVersion
 import Dependencies.constraintLayoutComposeVersion
@@ -85,6 +86,12 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:${hiltCoreVersion}")
     kapt("androidx.hilt:hilt-compiler:${hiltVersion}")
     implementation("androidx.hilt:hilt-navigation-compose:${hiltComposeNavigationVersion}")
+
+    //datastore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    //accompanis
+    implementation("com.google.accompanist:accompanist-systemuicontroller:${accompanistVersion}")
 }
 
 kapt {
