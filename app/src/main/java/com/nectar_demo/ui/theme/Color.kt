@@ -15,6 +15,7 @@ val midnightExpress = Color(0xFF181725)
 val darkGray = Color(0xFFB1B1B1)
 val gainsboro = Color(0xFFE2E2E2)
 val lilyWhite = Color(0xFFF2F3F2)
+val black = Color(0xFF030303)
 
 fun appColor() = Colors(
     primary = background,

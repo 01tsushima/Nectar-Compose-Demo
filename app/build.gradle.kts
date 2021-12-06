@@ -92,6 +92,7 @@ dependencies {
 
     //accompanis
     implementation("com.google.accompanist:accompanist-systemuicontroller:${accompanistVersion}")
+    implementation("com.google.accompanist:accompanist-insets:${accompanistVersion}")
 }
 
 kapt {

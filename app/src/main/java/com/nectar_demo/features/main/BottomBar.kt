@@ -33,27 +33,26 @@ fun bottomBar(
         BottomNavigation(backgroundColor = white) {
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentRoute = navBackStackEntry?.destination?.route ?: NavigationItem.Shop.route
-            if (currentRoute == SplashScreenRoute.route)
-                createBottomBarItem().forEach { item ->
-                    BottomNavigationItem(
-                        icon = {
-                            Icon(
-                                painter = painterResource(id = item.icon),
-                                contentDescription = null,
-                                tint = if (item.route == currentRoute) oceanGreen else midnightExpress
-                            )
-                        },
-                        selected = currentRoute == item.route,
-                        alwaysShowLabel = true,
-                        onClick = {
-                            if (currentRoute != item.route) {
-                                navController.navigate(item.route)
-                            }
-                        },
-                        selectedContentColor = oceanGreen,
-                        unselectedContentColor = midnightExpress
-                    )
-                }
+            createBottomBarItem().forEach { item ->
+                BottomNavigationItem(
+                    icon = {
+                        Icon(
+                            painter = painterResource(id = item.icon),
+                            contentDescription = null,
+                            tint = if (item.route == currentRoute) oceanGreen else midnightExpress
+                        )
+                    },
+                    selected = currentRoute == item.route,
+                    alwaysShowLabel = true,
+                    onClick = {
+                        if (currentRoute != item.route) {
+                            navController.navigate(item.route)
+                        }
+                    },
+                    selectedContentColor = oceanGreen,
+                    unselectedContentColor = midnightExpress
+                )
+            }
         }
     }
 }

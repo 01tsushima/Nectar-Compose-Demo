@@ -14,7 +14,6 @@ import androidx.compose.ui.res.painterResource
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.nectar_demo.R
 import com.nectar_demo.ui.theme.oceanGreen
-import kotlinx.coroutines.delay
 
 
 @Composable

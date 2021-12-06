@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import com.nectar_demo.common.navigation.NavActions
 import com.nectar_demo.features.login.navigation.loginScreenNav
 import com.nectar_demo.features.main.NavigationItem
+import com.nectar_demo.features.onboarding.navigation.onboardingScreenNav
 import com.nectar_demo.features.splash.navigation.navigation.splashScreenNav
 
 @Composable
@@ -30,25 +31,31 @@ fun NavGraph(
 
     NavHost(navController, startDestination = viewModel.getSplashRoute()) {
         composable(NavigationItem.Shop.route) {
+            bottomBarState(true)
             DefaultScreen(item = NavigationItem.Shop)
         }
         composable(NavigationItem.Explore.route) {
+            bottomBarState(true)
             DefaultScreen(item = NavigationItem.Explore)
         }
         composable(NavigationItem.Cart.route) {
+            bottomBarState(true)
             DefaultScreen(item = NavigationItem.Cart)
         }
         composable(NavigationItem.Favourite.route) {
+            bottomBarState(true)
             DefaultScreen(item = NavigationItem.Favourite)
         }
         composable(NavigationItem.Account.route) {
+            bottomBarState(true)
             DefaultScreen(item = NavigationItem.Account)
         }
 
-        splashScreenNav(navAction = navActions) {
+        splashScreenNav(navAction = navActions).apply {
             bottomBarState(false)
         }
-        loginScreenNav(navAction = navActions){}
+        loginScreenNav(navAction = navActions)
+        onboardingScreenNav(navAction = navActions)
     }
 }
 

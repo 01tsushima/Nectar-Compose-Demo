@@ -3,6 +3,7 @@ package com.nectar_demo.features.splash.navigation.actions
 import androidx.navigation.NavHostController
 import com.nectar_demo.features.login.route.LoginRoute
 import com.nectar_demo.features.main.NavigationItem
+import com.nectar_demo.features.onboarding.route.OnboardingRoute
 
 interface SplashActions {
 
@@ -12,7 +13,7 @@ interface SplashActions {
         controller.navigate(NavigationItem.Shop.route)
     }
 
-    fun navigateToLogin(){
-        controller.navigate(LoginRoute.route)
+    fun navigateToOnBoarding(){
+        controller.navigate(OnboardingRoute.route)
     }
 }

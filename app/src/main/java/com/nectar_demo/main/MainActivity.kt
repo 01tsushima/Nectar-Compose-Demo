@@ -10,6 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.insets.ProvideWindowInsets
 import com.nectar_demo.features.main.bottomBar
 import com.nectar_demo.ui.theme.NectarDemoTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,11 +31,13 @@ class MainActivity : ComponentActivity() {
     fun activityContent() {
         navController = rememberNavController()
         val bottomBarState = rememberSaveable { (mutableStateOf(false)) }
-        NectarDemoTheme {
-            Scaffold(
-                bottomBar = { bottomBar(navController = navController, bottomBarState = bottomBarState) },
-            ) {
-                NavGraph(navController = navController,bottomBarState  = {bottomBarState.value = it })
+        ProvideWindowInsets{
+            NectarDemoTheme {
+                Scaffold(
+                    bottomBar = { bottomBar(navController = navController, bottomBarState = bottomBarState) },
+                ) {
+                    NavGraph(navController = navController,bottomBarState  = {bottomBarState.value = it })
+                }
             }
         }
     }
