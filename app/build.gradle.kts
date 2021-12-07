@@ -7,6 +7,7 @@ import Dependencies.hiltComposeNavigationVersion
 import Dependencies.hiltCoreVersion
 import Dependencies.hiltVersion
 import Dependencies.pagingComposeVersion
+import Dependencies.roomVersion
 import Dependencies.timberVersion
 
 
@@ -90,9 +91,16 @@ dependencies {
     //datastore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
-    //accompanis
+    //accompanist
     implementation("com.google.accompanist:accompanist-systemuicontroller:${accompanistVersion}")
     implementation("com.google.accompanist:accompanist-insets:${accompanistVersion}")
+    implementation("com.google.accompanist:accompanist-pager:${accompanistVersion}")
+    implementation("com.google.accompanist:accompanist-pager-indicators:${accompanistVersion}")
+
+    //room
+    implementation("androidx.room:room-runtime:${roomVersion}")
+    implementation("androidx.room:room-ktx:${roomVersion}")
+    kapt("androidx.room:room-compiler:${roomVersion}")
 }
 
 kapt {

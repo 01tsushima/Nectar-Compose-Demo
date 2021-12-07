@@ -8,11 +8,13 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.nectar_demo.features.login.route.LoginRoute
+import com.nectar_demo.features.onboarding.route.OnboardingRoute
+import com.nectar_demo.features.shop.ui.route.ShopScreenRoute
 import com.nectar_demo.features.splash.navigation.route.SplashScreenRoute
 import com.nectar_demo.ui.theme.midnightExpress
 import com.nectar_demo.ui.theme.oceanGreen
@@ -22,17 +24,23 @@ import com.nectar_demo.ui.theme.white
 @Composable
 fun bottomBar(
     navController: NavHostController,
-    bottomBarState: MutableState<Boolean>
 ) {
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route ?: NavigationItem.Shop.route
+    val isVisible = when (currentRoute) {
+        SplashScreenRoute.route -> false
+        OnboardingRoute.route -> false
+        LoginRoute.route -> false
+        ShopScreenRoute.route -> true
+        else -> true
+    }
     AnimatedVisibility(
-        visible = bottomBarState.value,
+        visible = isVisible,
         enter = slideInVertically(initialOffsetY = { it }),
         exit = slideOutVertically(targetOffsetY = { it }),
     )
     {
         BottomNavigation(backgroundColor = white) {
-            val navBackStackEntry by navController.currentBackStackEntryAsState()
-            val currentRoute = navBackStackEntry?.destination?.route ?: NavigationItem.Shop.route
             createBottomBarItem().forEach { item ->
                 BottomNavigationItem(
                     icon = {

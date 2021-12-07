@@ -13,4 +13,5 @@ object Dependencies {
     const val timberVersion = "4.7.1"
     const val gsonVersion = "2.8.7"
     const val accompanistVersion = "0.16.1"
+    const val roomVersion = "2.3.0-beta02"
 }

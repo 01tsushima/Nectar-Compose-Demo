@@ -1,19 +1,18 @@
 package com.nectar_demo.features.splash.navigation.actions
 
 import androidx.navigation.NavHostController
-import com.nectar_demo.features.login.route.LoginRoute
-import com.nectar_demo.features.main.NavigationItem
 import com.nectar_demo.features.onboarding.route.OnboardingRoute
+import com.nectar_demo.features.shop.ui.route.ShopScreenRoute
 
 interface SplashActions {
 
-    val controller : NavHostController
+    val controller: NavHostController
 
-    fun navigateToShop(){
-        controller.navigate(NavigationItem.Shop.route)
+    fun navigateToShop() {
+        controller.navigate(ShopScreenRoute.route)
     }
 
-    fun navigateToOnBoarding(){
+    fun navigateToOnBoarding() {
         controller.navigate(OnboardingRoute.route)
     }
 }

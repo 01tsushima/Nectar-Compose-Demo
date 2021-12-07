@@ -16,10 +16,12 @@
 
 package com.nectar_demo.di
 
+import android.app.Application
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
-import androidx.navigation.NavHostController
+import androidx.room.Room
+import com.nectar_demo.base.db.AppDataBase
 import com.nectar_demo.extensions.dataStore
 import dagger.Module
 import dagger.Provides
@@ -37,7 +39,9 @@ object CommonModule {
     }
 
     @Provides
-    fun provideNavController(@ApplicationContext context: Context): NavHostController {
-        return NavHostController(context.applicationContext)
+    fun provideDaoProducts(application: Application): AppDataBase {
+        return Room.databaseBuilder(application, AppDataBase::class.java, "nectar.db")
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }
